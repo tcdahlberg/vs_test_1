@@ -1,0 +1,24 @@
+minimum_cumulusci_version: '2.5.8'
+project:
+    name: bulkApex
+    package:
+        name:  bulkApex
+        api_version: '46.0'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/bulkApex/tests
+            options:
+                outputdir: robot/bulkApex/results
+
+    robot_testdoc:
+        options:
+            path: robot/bulkApex/tests
+            output: robot/bulkApex/doc/bulkApex_tests.html
+
+flows:
+    config_qa:
+        1.1:
+            task: deploy_qa_config
